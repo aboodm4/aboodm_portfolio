@@ -154,7 +154,6 @@ export const projects: Project[] = [
     shortDescription: "Recruitment platform connecting job seekers with corporate employers, purpose-built with structured workflows for engineering and technical roles.",
     longDescription: "Namir Agency bridges the gap between top engineering talent and demanding tech employers. I built the complete web platform, which features custom resume builders, automated skill matching, and an intuitive applicant tracking dashboard for hiring teams.",
     featured: false,
-    liveUrl: "https://namir.agency",
     tags: ["Recruitment", "Job Board", "Laravel", "React", "ATS Workflow", "Engineering Roles"],
     metrics: [
       { label: "Focus", value: "Engineering Roles" },
@@ -183,7 +182,7 @@ export const projects: Project[] = [
     shortDescription: "Multi-tenant web application for managing Quran memorization courses across Damascus mosques with an incentivizing points-and-rewards system.",
     longDescription: "Noqati was created to bring structured digital organization and gamified motivation to Quranic memorization circles in Damascus. Each participating mosque operates an independent portal where supervisors track surah memorization, daily attendance, recitation accuracy, and point totals.",
     featured: false,
-    liveUrl: "https://noqati.org",
+    liveUrl: "https://noqati.aboodm.com",
     tags: ["Multi-tenant", "EdTech", "Gamification", "Points System", "Laravel", "PostgreSQL"],
     metrics: [
       { label: "Architecture", value: "Multi-Tenant" },

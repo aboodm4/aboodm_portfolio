@@ -102,9 +102,9 @@ export function Footer() {
         {/* Bottom Bar */}
         <div className="mt-12 pt-8 border-t border-slate-200/80 dark:border-navy-800 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500 dark:text-slate-400">
           <p>© {currentYear} {personalInfo.name}. All rights reserved.</p>
-          <div className="flex items-center gap-2">
+          {/* <div className="flex items-center gap-2">
             <span>Built with Next.js App Router, TypeScript & Tailwind CSS</span>
-          </div>
+          </div> */}
         </div>
       </div>
     </footer>

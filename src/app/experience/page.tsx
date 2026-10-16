@@ -2,6 +2,7 @@ import React from "react";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { experiences } from "@/data/experience";
+import { siteConfig } from "@/data/navigation";
 import { SectionHeading } from "@/components/section-heading";
 import {
   Briefcase,
@@ -14,13 +15,43 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Experience | Abdullrazak Mohammed Mojahed",
+  title: "Engineering Experience Timeline | Abdullrazak Mohammed Mojahed",
   description:
-    "Vertical career timeline of 10 production roles and engineering engagements by Abdullrazak Mohammed Mojahed (Laravel, NestJS, React).",
+    "Vertical career timeline of 10 production roles and engineering engagements by Abdullrazak Mohammed Mojahed across Sunrise IT Center, Alpha Clinic AI, Crunchy Fruits, Zain-Aldar, and Noqati.",
+  alternates: {
+    canonical: `${siteConfig.url}/experience`,
+  },
+  keywords: [
+    "Abdullrazak Mohammed Mojahed Experience",
+    "Sunrise IT Center Damascus",
+    "مركز صن رايز",
+    "Alpha Clinic AI",
+    "Crunchy Fruits",
+    "كرانشي فروتس",
+    "Zain-Aldar",
+    "زين الدار",
+    "Noqati",
+    "نقاطي",
+    "Namir Agency",
+    "Darak Real Estate",
+    "Full-Stack Developer Roles Syria",
+    "Laravel Developer Experience",
+    "NestJS Production Experience",
+    "خبرات عبد الرزاق مجاهد"
+  ],
   openGraph: {
     title: "Experience Timeline | Abdullrazak Mohammed Mojahed",
     description:
       "Full-stack and back-end roles across Alpha Clinic AI, Sunrise IT Center, Crunchy Fruits, Zain-Aldar, and more.",
+    url: `${siteConfig.url}/experience`,
+    images: [
+      {
+        url: siteConfig.ogImage,
+        width: 1200,
+        height: 630,
+        alt: "Abdullrazak Mohammed Mojahed - Experience Timeline",
+      },
+    ],
   },
 };
 

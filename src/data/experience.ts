@@ -118,7 +118,6 @@ export const experiences: ExperienceItem[] = [
     ],
     technologies: ["Laravel", "React", "MySQL", "Tailwind CSS", "ATS Workflow"],
     projectSlug: "namir-agency",
-    liveUrl: "https://namir.agency",
     highlight: "Engineering Recruitment Platform"
   },
   {
@@ -139,7 +138,7 @@ export const experiences: ExperienceItem[] = [
     ],
     technologies: ["Laravel", "Multi-tenancy", "React", "Gamification", "PostgreSQL"],
     projectSlug: "noqati",
-    liveUrl: "https://noqati.org",
+    liveUrl: "https://noqati.aboodm.com",
     highlight: "Multi-Mosque Course & Points System"
   },
   {

@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a0f16"/>
+      <stop offset="100%" stop-color="#16212e"/>
+    </linearGradient>
+    <linearGradient id="textGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#5ce0e7"/>
+      <stop offset="100%" stop-color="#1ca2a9"/>
+    </linearGradient>
+    <linearGradient id="borderGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#29bec6"/>
+      <stop offset="100%" stop-color="#0c4d51"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background Squircle with sleek border -->
+  <rect x="4" y="4" width="120" height="120" rx="30" ry="30" fill="url(#bgGrad)" stroke="url(#borderGrad)" stroke-width="4"/>
+
+  <!-- Subtle glow inner accent -->
+  <rect x="8" y="8" width="112" height="112" rx="26" ry="26" fill="none" stroke="#29bec6" stroke-width="1.2" stroke-opacity="0.35"/>
+
+  <!-- Initials "AM" in bold, geometric, tech style -->
+  <text x="64" y="82" font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="52" font-weight="900" text-anchor="middle" letter-spacing="-1" fill="url(#textGrad)">AM</text>
+
+  <!-- Green active status dot (Available for Work) -->
+  <circle cx="104" cy="24" r="7" fill="#10b981"/>
+</svg>

@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { projects, getProjectBySlug } from "@/data/projects";
+import { siteConfig } from "@/data/navigation";
 import {
   ArrowLeft,
   ExternalLink,
@@ -38,12 +39,48 @@ export async function generateMetadata({
     };
   }
 
+  const projectUrl = `${siteConfig.url}/projects/${project.slug}`;
+
   return {
-    title: `${project.title} | Projects`,
-    description: project.shortDescription,
+    title: `${project.title} — ${project.subtitle}`,
+    description: `${project.shortDescription} Developed by Abdullrazak Mohammed Mojahed.`,
+    keywords: [
+      project.title,
+      project.subtitle,
+      project.category,
+      ...project.tags,
+      ...project.techStack.backend,
+      ...project.techStack.frontend,
+      "Abdullrazak Mohammed Mojahed",
+      "Abdullrazak Mojahed",
+      "Abdulrazak Mojahed",
+      "عبد الرزاق محمد مجاهد",
+      "عبد الرزاق مجاهد",
+      "Full-Stack Developer",
+      "Case Study"
+    ],
+    alternates: {
+      canonical: projectUrl,
+    },
     openGraph: {
-      title: `${project.title} - Case Study | Abdullrazak Mohammed Mojahed`,
+      title: `${project.title} - ${project.subtitle} | Abdullrazak Mohammed Mojahed`,
       description: project.shortDescription,
+      url: projectUrl,
+      type: "article",
+      images: [
+        {
+          url: siteConfig.ogImage,
+          width: 1200,
+          height: 630,
+          alt: `${project.title} - Case Study by Abdullrazak Mohammed Mojahed`,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${project.title} - ${project.subtitle} | Abdullrazak Mohammed Mojahed`,
+      description: project.shortDescription,
+      images: [siteConfig.ogImage],
     },
   };
 }
@@ -62,8 +99,35 @@ export default async function ProjectDetailPage({ params }: ProjectPageProps) {
   const nextProject =
     currentIndex < projects.length - 1 ? projects[currentIndex + 1] : null;
 
+  const projectSchema = {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    name: project.title,
+    headline: project.subtitle,
+    description: project.longDescription,
+    applicationCategory: project.category,
+    operatingSystem: "Web Browser",
+    url: `${siteConfig.url}/projects/${project.slug}`,
+    author: {
+      "@type": "Person",
+      name: "Abdullrazak Mohammed Mojahed",
+      url: siteConfig.url,
+      sameAs: ["https://www.linkedin.com/in/abdullrazak-moj"]
+    },
+    creator: {
+      "@type": "Person",
+      name: "Abdullrazak Mohammed Mojahed"
+    },
+    keywords: project.tags.join(", "),
+    ...(project.liveUrl ? { installUrl: project.liveUrl } : {})
+  };
+
   return (
     <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16 space-y-12 pb-24">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(projectSchema) }}
+      />
       {/* Top Navigation */}
       <div className="flex items-center justify-between">
         <Link

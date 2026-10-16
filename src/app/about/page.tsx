@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { personalInfo } from "@/data/personal";
 import { skillCategories } from "@/data/skills";
+import { siteConfig } from "@/data/navigation";
 import { ProfilePhoto } from "@/components/profile-photo";
 import { SectionHeading } from "@/components/section-heading";
 import {
@@ -19,13 +20,39 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "About | Abdullrazak Mohammed Mojahed",
+  title: "About Abdullrazak Mohammed Mojahed | Software Engineer & Background",
   description:
-    "Bio, technical skillsets, education at Damascus University, and engineering practices of Abdullrazak Mohammed Mojahed.",
+    "Bio, technical skillsets, education at Damascus University (Software Engineering), and production engineering practices of Abdullrazak Mohammed Mojahed.",
+  alternates: {
+    canonical: `${siteConfig.url}/about`,
+  },
+  keywords: [
+    "About Abdullrazak Mohammed Mojahed",
+    "Abdullrazak Mojahed",
+    "Abdulrazak Mojahed",
+    "عبد الرزاق محمد مجاهد",
+    "عبد الرزاق مجاهد",
+    "Software Engineer Damascus",
+    "Damascus University Software Engineering",
+    "هندسة برمجيات جامعة دمشق",
+    "Full-Stack Developer Syria",
+    "Laravel Developer Syria",
+    "NestJS Developer",
+    "React Developer"
+  ],
   openGraph: {
     title: "About Abdullrazak Mohammed Mojahed | Full-Stack Developer",
     description:
       "Software Engineering student at Damascus University, full-stack engineer with expertise in Laravel, NestJS, and React.",
+    url: `${siteConfig.url}/about`,
+    images: [
+      {
+        url: siteConfig.ogImage,
+        width: 1200,
+        height: 630,
+        alt: "Abdullrazak Mohammed Mojahed - About",
+      },
+    ],
   },
 };
 

@@ -1,6 +1,7 @@
 import React from "react";
 import type { Metadata } from "next";
 import { personalInfo } from "@/data/personal";
+import { siteConfig } from "@/data/navigation";
 import { SectionHeading } from "@/components/section-heading";
 import { ContactForm } from "./contact-form";
 import {
@@ -14,13 +15,34 @@ import {
 import { LinkedInIcon } from "@/components/icons";
 
 export const metadata: Metadata = {
-  title: "Contact | Abdullrazak Mohammed Mojahed",
+  title: "Contact Abdullrazak Mohammed Mojahed | Full-Stack Developer",
   description:
-    "Get in touch with Abdullrazak Mohammed Mojahed for full-stack development, back-end API architecture, or consulting inquiries.",
+    "Get in touch directly with Abdullrazak Mohammed Mojahed for full-stack engineering, Laravel / NestJS back-end architecture, or project consulting in Damascus and remote.",
+  alternates: {
+    canonical: `${siteConfig.url}/contact`,
+  },
+  keywords: [
+    "Contact Abdullrazak Mohammed Mojahed",
+    "تواصل مع عبد الرزاق مجاهد",
+    "Hire Laravel Developer Syria",
+    "Hire React Developer Damascus",
+    "Damascus Software Engineer Contact",
+    "Email Abdullrazak Mojahed",
+    "Phone Abdullrazak Mojahed"
+  ],
   openGraph: {
     title: "Contact Abdullrazak Mohammed Mojahed",
     description:
       "Direct contact details: email, phone, location in Damascus, Syria, and LinkedIn profile.",
+    url: `${siteConfig.url}/contact`,
+    images: [
+      {
+        url: siteConfig.ogImage,
+        width: 1200,
+        height: 630,
+        alt: "Contact Abdullrazak Mohammed Mojahed",
+      },
+    ],
   },
 };
 

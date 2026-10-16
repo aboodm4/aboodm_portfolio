@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import Image from "next/image";
+import photoPic from "../../public/photo.jpg";
 
 interface ProfilePhotoProps {
   size?: "sm" | "md" | "lg" | "xl";
@@ -42,7 +43,7 @@ export function ProfilePhoto({
     >
       {!hasError ? (
         <Image
-          src="/photo.jpg"
+          src={photoPic}
           alt="Abdullrazak Mohammed Mojahed"
           width={currentSize.px}
           height={currentSize.px}

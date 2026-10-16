@@ -72,9 +72,90 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
-  icons: {
-    icon: "/favicon.ico",
+  alternates: {
+    canonical: siteConfig.url,
   },
+  category: "technology",
+  icons: {
+    icon: [
+      { url: "/icon.svg", type: "image/svg+xml" },
+      { url: "/favicon.ico", sizes: "32x32" },
+    ],
+    apple: "/apple-icon.png",
+  },
+};
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": `${siteConfig.url}/#person`,
+      name: "Abdullrazak Mohammed Mojahed",
+      alternateName: [
+        "Abdullrazak Mojahed",
+        "Abdulrazak Mojahed",
+        "Abood Mojahed",
+        "aboodm",
+        "عبد الرزاق محمد مجاهد",
+        "عبدالرزاق محمد مجاهد",
+        "عبد الرزاق مجاهد",
+        "عبدالرزاق مجاهد",
+        "عبود مجاهد"
+      ],
+      jobTitle: "Full-Stack Developer (Laravel, NestJS, React)",
+      description: siteConfig.description,
+      url: siteConfig.url,
+      image: `${siteConfig.url}/photo.jpg`,
+      alumniOf: {
+        "@type": "EducationalOrganization",
+        name: "Damascus University"
+      },
+      address: {
+        "@type": "PostalAddress",
+        addressLocality: "Damascus",
+        addressCountry: "Syria"
+      },
+      sameAs: [
+        "https://www.linkedin.com/in/abdullrazak-moj"
+      ],
+      knowsAbout: [
+        "Laravel",
+        "NestJS",
+        "React",
+        "PHP",
+        "TypeScript",
+        "Node.js",
+        "MySQL",
+        "PostgreSQL",
+        "Redis",
+        "REST API",
+        "WebSockets",
+        "Full-Stack Development"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": `${siteConfig.url}/#website`,
+      url: siteConfig.url,
+      name: "Abdullrazak Mohammed Mojahed Portfolio",
+      alternateName: ["aboodm.com", "موقع عبد الرزاق مجاهد"],
+      description: siteConfig.description,
+      publisher: {
+        "@id": `${siteConfig.url}/#person`
+      },
+      inLanguage: ["en", "ar"]
+    },
+    {
+      "@type": "ProfilePage",
+      "@id": `${siteConfig.url}/#profilepage`,
+      url: siteConfig.url,
+      name: "Abdullrazak Mohammed Mojahed - Full-Stack Developer",
+      mainEntity: {
+        "@id": `${siteConfig.url}/#person`
+      }
+    }
+  ]
 };
 
 export default function RootLayout({
@@ -90,6 +171,12 @@ export default function RootLayout({
       suppressHydrationWarning
       className={`${sora.variable} ${manrope.variable} h-full scroll-smooth`}
     >
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      </head>
       <body
         suppressHydrationWarning
         className="min-h-full flex flex-col font-body bg-slate-50 dark:bg-navy-950 text-slate-900 dark:text-slate-100 antialiased selection:bg-teal-500/20 selection:text-teal-700 dark:selection:text-teal-300"
