@@ -75,6 +75,9 @@ export const metadata: Metadata = {
   alternates: {
     canonical: siteConfig.url,
   },
+  verification: {
+    google: "E9FjjaOJ3ZWPwQUNDp9RybNAd4igXF4qpPEz6cQNo_Y",
+  },
   category: "technology",
   icons: {
     icon: [
